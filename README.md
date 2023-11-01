@@ -1,4 +1,4 @@
-# Random Password Generator - Documentation
+# ✓  Random Password Generator - Documentation
 
 ## Introduction
 
