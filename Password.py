@@ -35,6 +35,7 @@ def main():
     fin_pass = ''.join(password)
 
     cls
+    
     print(F"Sua senha é: {fin_pass}")
 
 main()
