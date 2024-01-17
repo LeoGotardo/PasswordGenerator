@@ -1,15 +1,18 @@
+from alive_progress import alive_bar
 import random as r
+import Debug as d
 import pyperclip
 import os
 
 
 def main():
     cls = os.system("cls")
-    tam = int(input(f"Quantos digitos deve ter sua senha?\n"))
-    num = input(f"Deve ter numeros? S/N\n")
-    letter = input(f"Deve ter letras? S/N\n")
-    symb = input(f"Deve ter simbulos? S/N\n")
-    maius = input(f"Deve ter letras maiusculas? S/N\n")
+    tam = int(input(f"{d.Margin}Quantos digitos deve ter sua senha?\n"))
+    num = input(f"{d.Margin}Deve ter numeros? S/N\n")
+    letter = input(f"{d.Margin}Deve ter letras? S/N\n")
+    symb = input(f"{d.Margin}Deve ter simbolos? S/N\n")
+    maius = input(f"{d.Margin}Deve ter letras maiusculas? S/N\n")
+    print(d.Margin)
 
     let = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
     may = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
@@ -30,10 +33,11 @@ def main():
     if maius.lower() == "s":
         for i in range(len(may)):
             fin.append(may[i])
-    for i in range(tam):
-        act = r.choice(fin)
-        password.append(act)
-
+    with alive_bar(tam) as bar:
+        for i in range(tam):
+            act = r.choice(fin)
+            password.append(act)
+            bar()
     fin_pass = ''.join(password)
 
     cls
