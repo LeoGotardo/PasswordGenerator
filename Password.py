@@ -1,4 +1,5 @@
-from alive_progress import alive_bar
+from alive_progress import alive_bar, config_handler
+from alive_progress import *
 import random as r
 import Debug as d
 import pyperclip
@@ -7,6 +8,7 @@ import os
 
 def main():
     cls = os.system("cls")
+    config_handler.set_global(length=50)
     tam = int(input(f"{d.Margin}Quantos digitos deve ter sua senha?\n"))
     num = input(f"{d.Margin}Deve ter numeros? S/N\n")
     letter = input(f"{d.Margin}Deve ter letras? S/N\n")
@@ -33,16 +35,17 @@ def main():
     if maius.lower() == "s":
         for i in range(len(may)):
             fin.append(may[i])
-    with alive_bar(tam) as bar:
+    with alive_bar(tam, title="Generating your password...") as bar:
         for i in range(tam):
             act = r.choice(fin)
             password.append(act)
+            d.Green
             bar()
     fin_pass = ''.join(password)
 
     cls
     
     pyperclip.copy(fin_pass)
-    print(F"Sua senha copiada a sua clipbord.")
+    print(F"{d.Margin}Sua senha copiada a sua clipbord.{d.Margin}")
 
 main()
