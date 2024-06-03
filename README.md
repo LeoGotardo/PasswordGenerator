@@ -8,7 +8,7 @@ This Python program generates a random password of a desired length, comprising 
 
 1. Run the program in your preferred Python environment.
 2. Enter the desired length of the password when prompted by the application.
-3. Choose whether the password should contain numbers, letters (both lowercase and uppercase), and symbols by answering with 'S' (Yes) or 'N' (No).
+3. Choose whether the password should contain numbers, letters (both lowercase and uppercase), and symbols by answering with 'Y' (Yes) or 'N' (No).
 4. The program will then generate a random password based on your choices and display it on the screen.
 
 ## Program Logic
